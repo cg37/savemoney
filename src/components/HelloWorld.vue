@@ -1,37 +1,41 @@
+<template>
+  <div class="topBar">
+    <h1>
+      Craig的每日开销记录
+    </h1>
+    <span>
+      无罪之人并不存在，他们不配来到你的天堂
+    </span>
+  </div>
+</template>
 <script setup lang="ts">
-import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
-
-const count = ref(0)
 </script>
 
-<template>
-  <h1>{{ msg }}</h1>
 
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
 
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
-</template>
+<style scoped lang="scss">
+.topBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  user-select: none;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  h1{
+    margin: 0;
+    text-align: left;
+  }
+  span{
+    margin: 0;
+    text-align: left;
+  }
 
-<style scoped>
+}
 .read-the-docs {
   color: #888;
 }
