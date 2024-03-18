@@ -1,10 +1,16 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<template>
+  <div class="mainPage">
+    <TopBar />
+    <div>
+      <MainFrame class="mainFrame"/>
+    </div>
+  </div>
+</template><script setup lang="ts">
+import TopBar from './components/TopBar.vue'
+import MainFrame from './components/MainFrame.vue'
 </script>
 
-<template>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+
 
 <style scoped>
 .logo {
@@ -18,5 +24,11 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.mainPage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>
