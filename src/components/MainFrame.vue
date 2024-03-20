@@ -25,13 +25,14 @@ const lastMoney = computed(()=>{
 }) as ComputedRef;
 const itemMoney = ref<number>(0);
 
-const addItem = function() {
+function addItem() {
   costList.push(itemMoney.value);
 }
 debounceWatch(
   () => costList,
   () => {
     addItem();
+    console.log(costList);
   },
   {
     immediate: true,
