@@ -1,4 +1,4 @@
-let lastSrcs;
+let lastSrcs: string | any[];
 const scriptReg = /\<script.*src=["'](?<src>[!"']+)>/gm
 
 async function extractNewScrits() {
@@ -31,4 +31,20 @@ async function needUpdate() {
   lastSrcs = newScripts;
   return res;
 }
+
+const DURATION = 1000 * 10;
+function autoRefresh(){
+  setTimeout(async () => {
+    const willUpdate = await needUpdate();
+    if (willUpdate) {
+      const res = confirm('需要更新');
+      if (res) {
+        location.reload();
+      }
+    }
+    autoRefresh();
+  }, DURATION);
+}
+
+autoRefresh();
 
